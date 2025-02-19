@@ -41,14 +41,14 @@
 	        <div class="col-md-6">
 	            <div class="thumbnail">
 
-						<img class="poster img-fluid" />
+						<img class="poster img-fluid" :src="movies[0].posters[0]"/>
 						<div class="imageInfo"> {{ movies[0].posterIndex }} </div>
 
 						<p class="title"> {{ movies[0].title }}  ({{ movies[0].country }})</p>
 						<p class="score"><i class="bi bi-star" aria-hidden="true"></i> {{ movies[0].iscore }} </p>
 						<p class="runtime">Runtime:  {{ movies[0].runtime }}</p>
 						<p class="released">Released: {{ movies[0].released }} | Rated: {{ movies[0].rating }}</p>
-						<p class="websites">Websites: <a> imdb   {{ movies[0].imdb }} </a> | <a> website {{ movies[0].website }}</a></p>
+						<p class="websites">Websites: <a :href=" movies[0].imdb"> IMDB  </a> | <a  :href="movies[0].website "> Official </a></p>
 
 			            <div class="social">
 			              <p class="likes"><i class="bi bi-hand-thumbs-up" aria-hidden="true"></i> {{ movies[0].likes }}</p>
