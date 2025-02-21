@@ -41,9 +41,36 @@ const vue_app = Vue.createApp({
                   github: 'https://github.com/VincentJ6/Jackson-P3'
       }
     },
-      methods: {
-            /* ADD FUNCTIONS/METHODS FOR STEP 7 HERE */
-      }
-})
+    methods: {
+      /* ADD FUNCTIONS/METHODS FOR STEP 7 HERE */
+      getMonthText(dateArray) {
+            const months = [
+                  "January", "February", "March", "April", "May", "June",
+                  "July", "August", "September", "October", "November", "December"
+            ];
+            const [year, month, day] = dateArray;
+            const monthText = months[month - 1];
+            return `${monthText} ${day}, ${year}`;
+      },
+      posterClick (index) {
+if (
+      this.movies[index].posterindex >=
+      this.mocies[index].poster.length - 1
 
+)
+{
+      this.movies[index].posterindex = 0
+} else {
+      this.movies[index].posterindex++
+}
+      },
+
+      timeText(minutes) {
+            const hours = Math.trunc(minutes / 60)
+            const mins = minutes % 60
+            return `${hours}h ${mins}m`
+      },
+
+}
+})
 vue_app.mount("#vue_app")
